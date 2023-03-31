@@ -4,6 +4,8 @@ import 'package:bonfire/bonfire.dart';
 import 'orc_sprite_sheet.dart';
 
 class Orc extends SimpleEnemy with ObjectCollision {
+  bool canMove = true;
+
   Orc(Vector2 position)
       : super(
           position: position, //required
@@ -58,12 +60,19 @@ class Orc extends SimpleEnemy with ObjectCollision {
     super.die();
   }
 
+/*
   @override
   void receiveDamage(AttackFromEnum attackFrom, double damage, dynamic from) {
+    canMove = false;
     if (lastDirectionHorizontal == Direction.left) {
-      animation?.playOnce(OrcSpriteSheet.recieveDamageLeft, runToTheEnd: true);
+      animation?.playOnce(
+        OrcSpriteSheet.recieveDamageLeft,
+        runToTheEnd: true,
+        
+      );
     } else {
       animation?.playOnce(OrcSpriteSheet.recieveDamageRight, runToTheEnd: true);
     }
   }
+   */
 }

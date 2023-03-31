@@ -8,7 +8,7 @@ class GameSpriteSheet {
           amount: 4,
           stepTime: 0.5,
           textureSize: Vector2(32, 32),
-          texturePosition: Vector2(96, 0),
+          texturePosition: Vector2(128, 0),
         ),
       );
 
@@ -28,7 +28,7 @@ class GameSpriteSheet {
           amount: 4,
           stepTime: 0.5,
           textureSize: Vector2(32, 32),
-          texturePosition: Vector2(0, 72),
+          texturePosition: Vector2(0, 128),
         ),
       );
 
@@ -38,7 +38,27 @@ class GameSpriteSheet {
           amount: 4,
           stepTime: 0.5,
           textureSize: Vector2(32, 32),
-          texturePosition: Vector2(96, 72),
+          texturePosition: Vector2(128, 96),
+        ),
+      );
+
+  static Future<SpriteAnimation> get attackLeft => SpriteAnimation.load(
+        'excalibur_.png',
+        SpriteAnimationData.sequenced(
+          amount: 4,
+          stepTime: 0.15,
+          textureSize: Vector2(32, 32),
+          texturePosition: Vector2(0, 32),
+        ),
+      );
+
+  static Future<SpriteAnimation> get attackRight => SpriteAnimation.load(
+        'excalibur_.png',
+        SpriteAnimationData.sequenced(
+          amount: 4,
+          stepTime: 0.15,
+          textureSize: Vector2(32, 32),
+          texturePosition: Vector2(0, 64),
         ),
       );
 }

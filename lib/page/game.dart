@@ -22,6 +22,7 @@ class GameScreen extends StatelessWidget {
             color: Colors.blue,
             size: 50,
             margin: EdgeInsets.only(bottom: 50, right: 50),
+            //enableDirection: true,
           )
         ],
       ),

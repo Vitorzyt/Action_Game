@@ -42,7 +42,9 @@ class GameHero extends SimplePlayer with ObjectCollision {
     simpleAttackMelee(
       damage: 20,
       size: Vector2(32, 32),
+      centerOffset: Vector2(-23, -5),
       sizePush: 16,
+      animationRight: GameSpriteSheet.attackRight,
     );
   }
 }

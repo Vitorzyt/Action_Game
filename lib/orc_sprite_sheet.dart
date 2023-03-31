@@ -8,7 +8,7 @@ class OrcSpriteSheet {
           amount: 4,
           stepTime: 0.5,
           textureSize: Vector2(32, 32),
-          texturePosition: Vector2(96, 0),
+          texturePosition: Vector2(128, 0),
         ),
       );
 
@@ -28,7 +28,7 @@ class OrcSpriteSheet {
           amount: 4,
           stepTime: 0.5,
           textureSize: Vector2(32, 32),
-          texturePosition: Vector2(0, 72),
+          texturePosition: Vector2(0, 128),
         ),
       );
 
@@ -38,7 +38,7 @@ class OrcSpriteSheet {
           amount: 4,
           stepTime: 0.5,
           textureSize: Vector2(32, 32),
-          texturePosition: Vector2(96, 72),
+          texturePosition: Vector2(128, 96),
         ),
       );
 
@@ -48,7 +48,7 @@ class OrcSpriteSheet {
           amount: 4,
           stepTime: 0.5,
           textureSize: Vector2(32, 32),
-          texturePosition: Vector2(64, 176),
+          texturePosition: Vector2(0, 288),
         ),
       );
 
@@ -58,7 +58,7 @@ class OrcSpriteSheet {
           amount: 4,
           stepTime: 0.5,
           textureSize: Vector2(32, 32),
-          texturePosition: Vector2(96, 72),
+          texturePosition: Vector2(128, 288),
         ),
       );
 }
