@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:bonfire/bonfire.dart';
 
+import 'game_sprite_sheet.dart';
 import 'orc_sprite_sheet.dart';
 
 class Orc extends SimpleEnemy with ObjectCollision {
@@ -37,7 +38,13 @@ class Orc extends SimpleEnemy with ObjectCollision {
   @override
   void update(double dt) {
     seeAndMoveToPlayer(
-      closePlayer: (player) {},
+      closePlayer: (player) {
+        if (lastDirection == Direction.right) {
+          _executeAttack();
+        } else {
+          _executeAttackLeft();
+        }
+      },
       radiusVision: 64,
     );
     super.update(dt);
@@ -52,6 +59,26 @@ class Orc extends SimpleEnemy with ObjectCollision {
       align: const Offset(0, -5),
     );
     super.render(canvas);
+  }
+
+  void _executeAttack() {
+    simpleAttackMelee(
+      damage: 20,
+      size: Vector2(25, 25),
+      centerOffset: Vector2(-15, -5),
+      sizePush: 16,
+      animationRight: GameSpriteSheet.attackRight,
+    );
+  }
+
+  void _executeAttackLeft() {
+    simpleAttackMelee(
+      damage: 20,
+      size: Vector2(25, 25),
+      centerOffset: Vector2(15, -5),
+      sizePush: 16,
+      animationRight: GameSpriteSheet.attackRight,
+    );
   }
 
   @override

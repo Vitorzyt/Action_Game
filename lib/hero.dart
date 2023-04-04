@@ -33,7 +33,11 @@ class GameHero extends SimplePlayer with ObjectCollision {
   @override
   void joystickAction(JoystickActionEvent event) {
     if (event.event == ActionEvent.DOWN && event.id == 1) {
-      _executeAttack();
+      if (lastDirection == Direction.right) {
+        _executeAttack();
+      } else {
+        _executeAttackLeft();
+      }
     }
     super.joystickAction(event);
   }
@@ -41,10 +45,37 @@ class GameHero extends SimplePlayer with ObjectCollision {
   void _executeAttack() {
     simpleAttackMelee(
       damage: 20,
-      size: Vector2(32, 32),
-      centerOffset: Vector2(-23, -5),
+      size: Vector2(25, 25),
+      centerOffset: Vector2(-15, -5),
       sizePush: 16,
       animationRight: GameSpriteSheet.attackRight,
     );
+  }
+
+  void _executeAttackLeft() {
+    simpleAttackMelee(
+      damage: 20,
+      size: Vector2(25, 25),
+      centerOffset: Vector2(15, -5),
+      sizePush: 16,
+      animationRight: GameSpriteSheet.attackRight,
+    );
+  }
+
+  @override
+  void render(Canvas canvas) {
+    drawDefaultLifeBar(
+      canvas,
+      borderWidth: 2,
+      height: 2,
+      align: const Offset(0, -5),
+    );
+    super.render(canvas);
+  }
+
+  @override
+  void die() {
+    removeFromParent();
+    super.die();
   }
 }

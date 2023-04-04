@@ -48,7 +48,7 @@ class GameSpriteSheet {
           amount: 4,
           stepTime: 0.15,
           textureSize: Vector2(32, 32),
-          texturePosition: Vector2(0, 32),
+          texturePosition: Vector2(8, 32),
         ),
       );
 
@@ -58,7 +58,7 @@ class GameSpriteSheet {
           amount: 4,
           stepTime: 0.15,
           textureSize: Vector2(32, 32),
-          texturePosition: Vector2(0, 64),
+          texturePosition: Vector2(11, 64),
         ),
       );
 }
